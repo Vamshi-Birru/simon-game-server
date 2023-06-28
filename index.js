@@ -18,6 +18,10 @@ mongoose.connect(process.env.MONGO_URL,{ useNewUrlParser: true, useUnifiedTopolo
 app.use(express.json()); // For parsing JSON request bodies
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.get("/",(req,res)=>{
+ res.setHeader("Access-Control-Allow-Credentials","true");
+ res.send("API is Running.....");
+})
 app.use("/login",Login);
 
 app.use("/register",Register);
