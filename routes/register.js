@@ -60,7 +60,7 @@ router.post("/", async (req, res) => {
     const Token=uuid();
     ttt=Token;
 
-    const verificationLink =  `http://localhost:8000/register/verify?token=${encodeURIComponent(Token)}&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(hash)}}`;
+    const verificationLink =  `https://simon-game-server.onrender.com/register/verify?token=${encodeURIComponent(Token)}&username=${encodeURIComponent(username)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(hash)}}`;
     sendVerificationEmail(email, verificationLink);
     return res.status(200).send({ message: "Please check the mail and click on the verification link to get registered" });
   }
